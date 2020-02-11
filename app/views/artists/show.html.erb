@@ -1,6 +1,22 @@
-<h1>Artist Show Page</h1>
+<div class="container">
 
-<h1><%= @artist.name %>'s Page</h1>
+<h1><%= @artist.name %></h1>
 
-<%= button_to "Delete Artist", artist_path(@artist), method: :delete %>
-<%= button_to "Create Artist", new_artist_path, method: :get%>
+<p><img class="show-img" src="<%= @artist.img_url %>" alt="<%= @artist.name %>"></p>
+
+<p> <b>Location:</b> <%= @artist.location %></p>
+<p> <b>Genres:</b> <%= @artist.genre%></p>
+<p> <b>Awards:</b> <%= @artist.awards%></p>
+<p> <b>Bio:</b> <%=@artist.bio%></p>
+
+<h2> Songs </h2>
+
+<% @artist.songs.each do |song| %>
+    <p><%= song.name %></p>
+    <%end %>
+
+
+
+<%= link_to "Delete Profile", '/artists/delete' %>
+
+</div>

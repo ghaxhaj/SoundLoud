@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authorized, except: [:new, :create]
+    before_action :user_authorized, except: [:new, :create]
     def index 
         @users = User.all
     end
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
         @user = current_user
         @songs = @user.songs
         @artists = @user.artists
+      
     end
 
     def new
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
         if @user.valid?
         redirect_to user_path(@user)
         else 
-        flash[:error] = @user.errors.full_messages
+        flash[:errors] = @user.errors.full_messages
         redirect_to new_user_path
         end
     end
@@ -45,6 +46,8 @@ class UsersController < ApplicationController
         @user.destroy
         redirect_to users_path
     end 
+
+ 
 
     private
     
