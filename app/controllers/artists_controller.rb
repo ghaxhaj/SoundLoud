@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-    before_action :get_current_artist, only: [:show, :edit, :update, :delete]
+    before_action :get_current_artist, only: [:show, :edit, :update, :destroy]
     
     def index
         @artists = Artist.all 
@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
 
     def create 
         @artist = Artist.create(artist_params)
-        redirect_to artist_path(artist.id)
+        redirect_to artist_path(@artist)
     end
 
     def edit
@@ -25,8 +25,8 @@ class ArtistsController < ApplicationController
         redirect_to artist_path(@artist.id)
     end
 
-    def destroy
-        @artist.delete
+    def destroy 
+        @artist.destroy
         redirect_to artists_path
     end 
 
