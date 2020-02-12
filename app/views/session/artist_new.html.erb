@@ -6,12 +6,12 @@
     <% end %>
 
 
-<%= form_tag '/sessions' do %>
+<%= form_tag({:controller => "artists", :action => "index"}, method: :get) do %>
     <%= label_tag "username" %>
     <%= text_field_tag "username"%>
     <%= label_tag "password" %>
     <%= text_field_tag "password" %>
    <%= submit_tag "submit" %>
-    <% end %>
+   <% end %>
 
     <%= button_to "Create Account", new_artist_path, method: :get %>

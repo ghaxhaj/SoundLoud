@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-     before_action :artist_authorized, except: [:index, :new, :create]
+     #before_action :artist_authorized, except: [:index, :new, :create]
 
     
     def index
