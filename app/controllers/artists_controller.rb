@@ -1,17 +1,23 @@
 class ArtistsController < ApplicationController
 
 
-    before_action :artist_authorized, except: [:index, :new, :create]
+    before_action :artist_authorized, except: [:index, :show, :new, :create]
 
     
     def index
         @artists = Artist.all   
     end
+
+    def profile 
+        @artist = current_artist
+    end
     
     def show
-        @artist = current_artist
-
+        @artist = Artist.find(params[:id])
+        if @artist == current_artist
+        redirect_to artist_profile_path
     end
+end
 
     def new
         @artist = Artist.new 
@@ -21,7 +27,7 @@ class ArtistsController < ApplicationController
         @artist = Artist.create(artist_params)
         session[:artist_id] = @artist.id
         if @artist.valid?
-        redirect_to artist_path(@artist)
+        redirect_to artist_profile_path(@artist)
         else 
         flash[:errors] = @artist.errors.full_messages
         redirect_to new_artist_path
@@ -36,7 +42,7 @@ class ArtistsController < ApplicationController
         @artist = current_artist
         @artist.update(artist_params)
         if @artist.valid?
-        redirect_to artist_path(@artist.id)
+        redirect_to artist_profile_path(@artist.id)
     else 
         flash[:errors] = @artist.errors.full_messages
         redirect_to new_artist_path

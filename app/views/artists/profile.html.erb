@@ -1,5 +1,3 @@
-<% if session[:user_id] || session[:artist_id] %>
-
 <div class="container">
 
 <h1><%= @artist.name %></h1>
@@ -17,5 +15,12 @@
     <p><%= song.name %></p>
     <%end %>
 
+
+<a href="/artists/delete" class="btn btn-outline-light" role="button">Delete Account</a>
+
 <a href="/artists" class="btn btn-outline-light" role="button">Back to Artists</a>
-<%end %>
+
+<a href="/artists/profile/songs/new" class="btn btn-outline-light" role="button">Add New Song</a>
+
+<%= link_to "Logout", '/artists/logout', method: :delete%>
+</div>

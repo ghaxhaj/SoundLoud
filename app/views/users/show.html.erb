@@ -11,7 +11,8 @@
 <%= link_to artist.name, artist_path(artist) %>
 <% end %>
 
-<a href="/artists" class="btn btn-outline-light" role="button">All Artists</a>
+<a href="/users/artists" class="btn btn-outline-light" role="button">Artists</a>
+<%= link_to "Logout", '/user/logout', method: :delete%>
 
 
 
