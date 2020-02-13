@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   get '/', to: 'welcome#home'
 
-  #session controller
+  #USER
   get 'session/new'
   get 'session/create'
   get 'session/destroy'
@@ -37,7 +37,8 @@ Rails.application.routes.draw do
   post '/artists/sessions', to: 'session#artist_create'
   delete '/artists/logout', to: 'session#artist_destroy'
 
-  
+  #Song
+  # get '/songs/new', to: 'songs#new', as: "new_song"
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

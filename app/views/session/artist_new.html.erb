@@ -1,4 +1,4 @@
-<h1>Log In or Create Artist</h1>
+<h1>Artist Login</h1>
 
 
 <% if flash[:errors] %>
@@ -6,12 +6,10 @@
     <% end %>
 
 
-<%= form_tag({:controller => "artists", :action => "index"}, method: :get) do %>
+<%= form_tag({:controller => "session", :action => "artist_create"}, method: :post) do %>
     <%= label_tag "username" %>
     <%= text_field_tag "username"%>
     <%= label_tag "password" %>
     <%= text_field_tag "password" %>
-   <%= submit_tag "submit" %>
+   <%= submit_tag "Login" %>
    <% end %>
-
-    <%= button_to "Create Account", new_artist_path, method: :get %>

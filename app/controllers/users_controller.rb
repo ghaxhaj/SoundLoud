@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+
     before_action :user_authorized, except: [:new, :create]
+
     def index 
         @users = User.all
     end
@@ -54,4 +56,7 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:name, :username, :password, :email)
     end
+
+
+
 end
