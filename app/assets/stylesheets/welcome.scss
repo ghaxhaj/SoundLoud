@@ -1,0 +1,13 @@
+// <div class="embed-responsive embed-responsive-16by9">
+//   <iframe class="embed-responsive-item" src="https://www.piva.com.tr/wp-content/uploads/2018/01/piva-music-slide1.jpg" allowfullscreen></iframe>
+// </div>
+
+body {
+  background:url("https://www.piva.com.tr/wp-content/uploads/2018/01/piva-music-slide1.jpg");
+  min-height : 100%;
+  min-width : 100%;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  overflow-y: hidden;
+  overflow-x: hidden;
+ }

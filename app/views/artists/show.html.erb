@@ -1,6 +1,11 @@
+
+
 <div class="container">
 
 <h1><%= @artist.name %></h1>
+
+
+
 
 <p><img class="show-img" src="<%= @artist.img_url %>" alt="<%= @artist.name %>"></p>
 
@@ -16,7 +21,11 @@
     <%end %>
 
 
+<a href="/artists/delete" class="btn btn-outline-light" role="button">Delete Account</a>
 
-<%= link_to "Delete Profile", '/artists/delete' %>
+<a href="/artists" class="btn btn-outline-light" role="button">Back to Artists</a>
+
+<a href="/artists" class="btn btn-outline-light" role="button">Add New Song</a>
+
 
 </div>

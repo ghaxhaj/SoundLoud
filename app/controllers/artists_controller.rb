@@ -1,13 +1,16 @@
 class ArtistsController < ApplicationController
-     #before_action :artist_authorized, except: [:index, :new, :create]
+
+
+    before_action :artist_authorized, except: [:index, :new, :create]
 
     
     def index
-        @artists = Artist.all
+        @artists = Artist.all   
     end
     
     def show
         @artist = current_artist
+
     end
 
     def new
@@ -53,4 +56,6 @@ class ArtistsController < ApplicationController
     def artist_params
         params.require(:artist).permit(:name, :bio, :location, :img_url, :genre, :awards, :username, :password)
     end
+
+ 
 end

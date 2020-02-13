@@ -17,4 +17,21 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+#welcome{
+    height: 100vh;
+    background-image:linear-gradient(rgba(128, 128, 128, 0.267)), url("https://www.piva.com.tr/wp-content/uploads/2018/01/piva-music-slide1.jpg");
+    background-size: cover;
+    background-position: top;
+}
 
+
+//  #welcome_head {
+//      border: dotted;
+//      border-color: palevioletred;
+//      color: rgba(34, 22, 209, 0.678);
+//      width: 50%;
+//      position: absolute;
+//      left: 50%;
+//      top: 50%;
+//      transform: translate(-50%);
+//  }
